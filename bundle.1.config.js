@@ -1,29 +1,7 @@
-/*
- <!-- CSS -->
- <link rel="stylesheet" href="../../../scripts/owlCarousel/owlCarousel.css"/>
- <link rel="stylesheet" href="../../../styles/helper.css">
- <link rel="stylesheet" href="../../../styles/siteIcons.css">
- <link rel="stylesheet" href="src/css/style.css">
+//jQuery, Angular, OwlCarousel, NG Infinite Scroll,
+// Owl CSS, Site CSS
 
- <!-- JS -->
- <script src="../../../scripts/jquery/jquery-1.11.2.min.js"></script>
- <script src="../../../scripts/smartcrop.js"></script>
- <script src="../../../scripts/angular/angular.min.js"></script>
-
- <script src="src/js/angular-owl-carousel.js"></script>
-
- <script src="../../../scripts/buildfire.js"></script>
- <script src="../../../scripts/owlCarousel/owlCarousel.js"></script> <
- <script src="../../../scripts/buildfire/components/carousel/carousel.js"></script>
- <script src="../../../scripts/buildfire/components/pluginInstance/sortableList.js"></script>
- <script src="../../../scripts/angular/ng-infinite-scroll.custom.js"></script>
- <script src="src/widget.controller.js"></script>
- */
-
-//jquery, Angular, OwlCarousel, NG Infinite Scroll,
-// Owl CSS, site CSS
-
-// bundle.config.js
+// bundle.1.config.js
 module.exports = {
     bundle: {
         main: {
