@@ -297,6 +297,16 @@ var buildfire = {
             var p = new Packet(null, 'navigation.scrollTop');
             buildfire._sendPacket(p,callback);
         }
+        , _testPopUp: function(callback){
+            var windowName = "test_" + parseInt(Math.random() * 100000),
+                popUp = window.open("", windowName, "width=0,height=0");
+
+            if(!popUp){
+                callback('Blocked');
+            }else{
+                callback(null);
+            }
+        }
         , openWindow: function (url, target, callback) {
             if (!target) target = '_blank';
             if (!callback) callback = function () {
@@ -308,8 +318,15 @@ var buildfire = {
                 , openIn: target
             };
 
-            var p = new Packet(null, 'actionItems.execute', actionItem, callback);
-            buildfire._sendPacket(p);
+            buildfire.navigation._testPopUp(function(err){
+                var p = (!err) ? new Packet(null, 'actionItems.execute', actionItem) : new Packet(null, 'popupblocked');
+
+                buildfire._sendPacket(p);
+
+                if(callback)
+                    callback(err);
+            });
+
         }
         , _goBackOne: function () {
             buildfire._sendPacket(new Packet(null, 'navigation.navigateBack'));
