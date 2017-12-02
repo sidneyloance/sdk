@@ -319,7 +319,9 @@ var buildfire = {
             };
 
             buildfire.navigation._testPopUp(function(err){
-                var p = (!err) ? new Packet(null, 'actionItems.execute', actionItem) : new Packet(null, 'popupblocked');
+                var p = (!err) ?
+                    new Packet(null, 'actionItems.execute', actionItem)
+                    : new Packet(null, 'navigation.displayPopUpInstructions');
 
                 buildfire._sendPacket(p);
 
